@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "use": "@vercel/static",
+      "config": {
+        "vercel-build": "go build -o server && ./server"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/"
+    }
+  ]
+}
