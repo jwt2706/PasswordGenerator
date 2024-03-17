@@ -1,0 +1,22 @@
+{
+  "name": "passwordgenerator",
+  "version": "1.0.0",
+  "description": "Generate passwords",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jwt2706/PasswordGenerator.git"
+  },
+  "author": "jwt2706",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/jwt2706/PasswordGenerator/issues"
+  },
+  "homepage": "https://github.com/jwt2706/PasswordGenerator",
+  "dependencies": {
+    "vercel": "^33.6.1"
+  }
+}
