@@ -3,7 +3,7 @@ document.getElementById('password-form').addEventListener('submit', function(eve
   
   let length = document.getElementById('length').value;
   
-  fetch('https://backend-mauve-delta.vercel.app/', {
+  fetch('backend-mauve-delta.vercel.app', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
