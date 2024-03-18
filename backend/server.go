@@ -24,15 +24,20 @@ func generatePassword(length int) string {
 	return password.String()
 }
 
-func handleGeneratePassword(w http.ResponseWriter, r *http.Request) {
-	length := 10
-	if len(r.URL.Query()["length"]) > 0 {
-		length, _ = strconv.Atoi(r.URL.Query()["length"][0])
-	}
+func enableCors(w *http.ResponseWriter) {
+	(*w).Header().Set("Access-Control-Allow-Origin", "https://jwt2706.ca")
+}
 
-	password := generatePassword(length)
-	response := PasswordResponse{Password: password}
-	json.NewEncoder(w).Encode(response)
+func handleGeneratePassword(w http.ResponseWriter, r *http.Request) {
+    enableCors(&w)
+    length := 10
+    if len(r.URL.Query()["length"]) > 0 {
+        length, _ = strconv.Atoi(r.URL.Query()["length"][0])
+    }
+
+    password := generatePassword(length)
+    response := PasswordResponse{Password: password}
+    json.NewEncoder(w).Encode(response)
 }
 
 func main() {
