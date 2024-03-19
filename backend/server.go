@@ -24,12 +24,18 @@ func generatePassword(length int) string {
 	return password.String()
 }
 
-func enableCors(w *http.ResponseWriter) {
-	(*w).Header().Set("Access-Control-Allow-Origin", "https://jwt2706.ca")
-}
-
 func handleGeneratePassword(w http.ResponseWriter, r *http.Request) {
-    enableCors(&w)
+    if r.Method == http.MethodOptions {
+        // Pre-flight request. Reply with CORS headers
+        w.Header().Set("Access-Control-Allow-Origin", "http://jwt2706.ca")
+        w.Header().Set("Access-Control-Allow-Methods", "POST")
+        w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
+        w.WriteHeader(http.StatusNoContent)
+        return
+    }
+
+    w.Header().Set("Access-Control-Allow-Origin", "http://jwt2706.ca")
+
     length := 10
     if len(r.URL.Query()["length"]) > 0 {
         length, _ = strconv.Atoi(r.URL.Query()["length"][0])
