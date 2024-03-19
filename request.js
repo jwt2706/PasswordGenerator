@@ -5,6 +5,7 @@ document.getElementById('password-form').addEventListener('submit', function(eve
   
   fetch('https://backend-mauve-delta.vercel.app/generate-password', {
     method: 'POST',
+    mode: 'cors',
     headers: {
       'Content-Type': 'application/json',
     },
