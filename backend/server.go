@@ -28,7 +28,7 @@ func enableCors(w *http.ResponseWriter) {
 	(*w).Header().Set("Access-Control-Allow-Origin", "https://jwt2706.ca")
 }
 
-func handleGeneratePassword(w http.ResponseWriter, r *http.Request) {}
+func handleGeneratePassword(w http.ResponseWriter, r *http.Request) {
 	enableCors(&w)
 
     length := 10
