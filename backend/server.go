@@ -29,7 +29,12 @@ func enableCors(w *http.ResponseWriter) {
 }
 
 func handleGeneratePassword(w http.ResponseWriter, r *http.Request) {
-	enableCors(&w)
+    enableCors(&w)
+
+    if r.Method == http.MethodOptions {
+        w.WriteHeader(http.StatusOK)
+        return
+    }
 
     length := 10
     if len(r.URL.Query()["length"]) > 0 {
