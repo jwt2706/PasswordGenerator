@@ -1,5 +1,7 @@
 # PasswordGenerator
 
+not done yet
+
 TODO:
 
 - generate passwords
