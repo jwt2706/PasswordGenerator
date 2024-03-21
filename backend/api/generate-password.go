@@ -25,7 +25,7 @@ func generatePassword(length int) string {
 }
 
 func enableCors(w *http.ResponseWriter) {
-    (*w).Header().Set("Access-Control-Allow-Origin", "https://jwt2706.ca")
+    (*w).Header().Set("Access-Control-Allow-Origin", "*")
 }
 
 func Handler(w http.ResponseWriter, r *http.Request) {
