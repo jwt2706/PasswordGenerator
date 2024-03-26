@@ -19,7 +19,7 @@
           id="length"
           name="length"
           min="4"
-          max="32"
+          max="24"
           value="10"
         />
         <button type="submit">Generate Password</button>
@@ -35,6 +35,7 @@
         <label for="test-password">Password to Test:</label>
         <input type="text" id="test-password" name="test-password" />
         <button type="submit">Test Strength</button>
+        <div id="strength-loading" style="display: none">Loading...</div>
         <p id="strength" class="response-box" style="display: none"></p>
       </form>
     </div>

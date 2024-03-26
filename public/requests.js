@@ -31,6 +31,7 @@ document
   .addEventListener("submit", function (e) {
     e.preventDefault();
     var password = document.getElementById("test-password").value;
+    document.getElementById("strength-loading").style.display = "block";
     fetch("/api/strength-test.go", {
       method: "POST",
       headers: {
@@ -45,8 +46,10 @@ document
         document.getElementById("strength").innerText =
           "Strength: " + data.strength;
         document.getElementById("strength").style.display = "block";
+        document.getElementById("strength-loading").style.display = "none";
       })
       .catch(function (error) {
         console.error("Error:", error);
+        document.getElementById("strength-loading").style.display = "none";
       });
   });
