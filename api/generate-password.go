@@ -6,7 +6,6 @@ import (
     "strconv"
     "strings"
     "math/rand"
-    "time"
 )
 
 type PasswordResponse struct {
