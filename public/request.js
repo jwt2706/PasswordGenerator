@@ -21,3 +21,8 @@ document
         console.error("Error:", error);
       });
   });
+
+document.getElementById("copy-button").addEventListener("click", function () {
+  var password = document.getElementById("password").innerText;
+  navigator.clipboard.writeText(password);
+});
