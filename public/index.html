@@ -16,17 +16,17 @@
         <label for="length">Length:</label>
         <input type="number" id="length" name="length" min="1" value="10" />
         <button type="submit">Generate Password</button>
+        <div id="password-container" style="display: none">
+          <p id="password" class="response-box"></p>
+          <button id="copy-button">&#128203;</button>
+        </div>
       </form>
-      <div id="password-container" style="display: none">
-        <p id="password"></p>
-        <button id="copy-button">📋</button>
-      </div>
       <form id="strength-test-form">
         <label for="test-password">Password to Test:</label>
         <input type="text" id="test-password" name="test-password" />
         <button type="submit">Test Strength</button>
+        <p id="strength" class="response-box"></p>
       </form>
-      <p id="strength"></p>
     </div>
     <script src="requests.js"></script>
   </body>
