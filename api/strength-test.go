@@ -3,6 +3,8 @@ package handler
 import (
     "encoding/json"
     "net/http"
+    "regexp"
+    "unicode"
 )
 
 type PasswordRequest struct {
@@ -31,9 +33,9 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 
         var strength string
         switch {
-        case len(req.Password) < 6:
+        case isWeak(req.Password):
             strength = "Weak"
-        case len(req.Password) < 10:
+        case isMedium(req.Password):
             strength = "Medium"
         default:
             strength = "Strong"
@@ -44,4 +46,24 @@ func Handler(w http.ResponseWriter, r *http.Request) {
     } else {
         w.WriteHeader(http.StatusMethodNotAllowed)
     }
+}
+
+func isWeak(password string) bool {
+    length := len(password)
+    hasLower := regexp.MustCompile(`[a-z]`).MatchString(password)
+    hasUpper := regexp.MustCompile(`[A-Z]`).MatchString(password)
+    hasNumber := regexp.MustCompile(`[0-9]`).MatchString(password)
+    hasSpecial := regexp.MustCompile(`[^a-zA-Z0-9\s]`).MatchString(password)
+
+    return length < 8 || !hasLower || !hasUpper || !hasNumber || !hasSpecial
+}
+
+func isMedium(password string) bool {
+    length := len(password)
+    hasLower := regexp.MustCompile(`[a-z]`).MatchString(password)
+    hasUpper := regexp.MustCompile(`[A-Z]`).MatchString(password)
+    hasNumber := regexp.MustCompile(`[0-9]`).MatchString(password)
+    hasSpecial := regexp.MustCompile(`[^a-zA-Z0-9\s]`).MatchString(password)
+
+    return length >= 8 && ((hasLower && hasUpper && hasNumber) || (hasLower && hasUpper && hasSpecial) || (hasLower && hasNumber && hasSpecial) || (hasUpper && hasNumber && hasSpecial))
 }
