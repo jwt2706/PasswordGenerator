@@ -5,7 +5,7 @@ document
 
     let length = document.getElementById("length").value;
 
-    fetch("/api/generate-password", {
+    fetch("/api/generate-password.go", {
       method: "POST",
       mode: "cors",
       headers: {
