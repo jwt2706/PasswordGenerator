@@ -15,20 +15,20 @@ body {
   width: 90%;
 }
 img {
-  max-width: 50%;
-  height: auto;
+  width: 150px;
+  height: 150px;
 }
 .form {
   background: #fff;
-  padding: 2%;
+  padding: 20px;
   border-radius: 8px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  margin-bottom: 2%;
+  margin-bottom: 20px;
   width: 100%;
 }
 input {
-  margin: 1% 0;
-  padding: 1%;
+  margin: 10px 0;
+  padding: 10px;
   width: 100%;
   box-sizing: border-box;
   border: none;
@@ -37,8 +37,8 @@ input {
   outline: none;
 }
 button {
-  margin: 1% 0;
-  padding: 1%;
+  margin: 10px 0;
+  padding: 10px;
   width: 100%;
   background-color: #4caf50;
   color: white;
@@ -47,22 +47,22 @@ button {
 }
 .response-box {
   border: 1px solid #ccc;
-  padding: 1%;
-  margin-top: 1%;
+  padding: 10px;
+  margin-top: 10px;
   background-color: #f9f9f9;
   display: grid;
   grid-template-columns: 1fr auto;
   align-items: center;
-  gap: 1%;
+  gap: 10px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 .home-button {
   position: absolute;
-  top: 1%;
-  left: 1%;
-  padding: 1%;
+  top: 10px;
+  left: 10px;
+  padding: 10px;
   background-color: #4caf50;
   color: white;
   text-decoration: none;
@@ -73,14 +73,5 @@ button:hover,
   background-color: #45a049;
 }
 #copy-button {
-  padding: 1%;
-}
-@media (min-width: 768px) {
-  .container {
-    width: 50%;
-  }
-
-  .form {
-    width: 80%;
-  }
+  padding: 10px;
 }
