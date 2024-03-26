@@ -1,9 +1,11 @@
-name: Deploy Frontend
+name: Deploy Redirect
 
 on:
   push:
     branches:
       - main
+    paths:
+      - "pages/**"
 
 jobs:
   deploy:
@@ -17,5 +19,5 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@4.1.5
         with:
           branch: gh-pages
-          folder: frontend
+          folder: pages
           token: ${{ secrets.GITHUB_TOKEN }}

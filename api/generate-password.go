@@ -24,13 +24,7 @@ func generatePassword(length int) string {
     return password.String()
 }
 
-func enableCors(w *http.ResponseWriter) {
-    (*w).Header().Set("Access-Control-Allow-Origin", "*")
-}
-
 func Handler(w http.ResponseWriter, r *http.Request) {
-    enableCors(&w)
-
 	if r.Method == http.MethodOptions {
         w.Header().Set("Access-Control-Allow-Methods", "POST, OPTIONS")
         w.Header().Set("Access-Control-Allow-Headers", "Content-Type")

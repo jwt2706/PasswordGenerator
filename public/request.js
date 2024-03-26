@@ -5,7 +5,7 @@ document
 
     let length = document.getElementById("length").value;
 
-    fetch("https://backend-mauve-delta.vercel.app/api/generate-password", {
+    fetch("/api/generate-password", {
       method: "POST",
       mode: "cors",
       headers: {
