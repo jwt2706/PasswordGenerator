@@ -44,6 +44,7 @@ document
       .then(function (data) {
         document.getElementById("strength").innerText =
           "Strength: " + data.strength;
+        document.getElementById("strength").style.display = "block";
       })
       .catch(function (error) {
         console.error("Error:", error);
