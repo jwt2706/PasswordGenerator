@@ -4,7 +4,6 @@ import (
     "encoding/json"
     "net/http"
     "regexp"
-    "unicode"
 )
 
 type PasswordRequest struct {
