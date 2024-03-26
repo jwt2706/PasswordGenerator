@@ -1,23 +1,17 @@
 document
   .getElementById("password-form")
-  .addEventListener("submit", function (event) {
-    event.preventDefault();
-
-    let length = document.getElementById("length").value;
-
-    fetch("/api/generate-password.go", {
-      method: "POST",
-      mode: "cors",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ length: length }),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        document.getElementById("password").textContent = data.password;
+  .addEventListener("submit", function (e) {
+    e.preventDefault();
+    var length = document.getElementById("length").value;
+    fetch("/api/generate-password.go?length=" + length, { method: "POST" })
+      .then(function (response) {
+        return response.json();
       })
-      .catch((error) => {
+      .then(function (data) {
+        document.getElementById("password").innerText = data.password;
+        document.getElementById("password-container").style.display = "block";
+      })
+      .catch(function (error) {
         console.error("Error:", error);
       });
   });

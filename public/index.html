@@ -17,8 +17,10 @@
         <input type="number" id="length" name="length" min="1" value="10" />
         <button type="submit">Generate Password</button>
       </form>
-      <p id="password"></p>
-      <button id="copy-button">Copy to Clipboard</button>
+      <div id="password-container" style="display: none">
+        <p id="password"></p>
+        <button id="copy-button">📋</button>
+      </div>
     </div>
     <script src="request.js"></script>
   </body>
