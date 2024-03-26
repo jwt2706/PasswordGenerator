@@ -1,3 +1,4 @@
+// password generator
 document
   .getElementById("password-form")
   .addEventListener("submit", function (e) {
@@ -26,11 +27,16 @@ document.getElementById("copy-button").addEventListener("click", function () {
   navigator.clipboard.writeText(password);
 });
 
+// strength test
 document
   .getElementById("strength-test-form")
   .addEventListener("submit", function (e) {
-    e.preventDefault();
     var password = document.getElementById("test-password").value;
+    if (!password) {
+      e.preventDefault();
+      alert("Please enter a password to test.");
+      return;
+    }
     document.getElementById("strength-loading").style.display = "block";
     fetch("/api/strength-test.go", {
       method: "POST",
