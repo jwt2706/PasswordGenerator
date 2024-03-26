@@ -36,8 +36,10 @@ func Handler(w http.ResponseWriter, r *http.Request) {
             strength = "Weak"
         case isMedium(req.Password):
             strength = "Medium"
-        default:
+        case isStrong(req.Password):
             strength = "Strong"
+        default:
+            strength = "Very Strong"
         }
 
         res := StrengthResponse{Strength: strength}
@@ -49,12 +51,7 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 
 func isWeak(password string) bool {
     length := len(password)
-    hasLower := regexp.MustCompile(`[a-z]`).MatchString(password)
-    hasUpper := regexp.MustCompile(`[A-Z]`).MatchString(password)
-    hasNumber := regexp.MustCompile(`[0-9]`).MatchString(password)
-    hasSpecial := regexp.MustCompile(`[^a-zA-Z0-9\s]`).MatchString(password)
-
-    return length < 8 || !hasLower || !hasUpper || !hasNumber || !hasSpecial
+    return length < 8
 }
 
 func isMedium(password string) bool {
@@ -62,7 +59,16 @@ func isMedium(password string) bool {
     hasLower := regexp.MustCompile(`[a-z]`).MatchString(password)
     hasUpper := regexp.MustCompile(`[A-Z]`).MatchString(password)
     hasNumber := regexp.MustCompile(`[0-9]`).MatchString(password)
+
+    return length >= 8 && ((hasLower && hasUpper) || (hasLower && hasNumber) || (hasUpper && hasNumber))
+}
+
+func isStrong(password string) bool {
+    length := len(password)
+    hasLower := regexp.MustCompile(`[a-z]`).MatchString(password)
+    hasUpper := regexp.MustCompile(`[A-Z]`).MatchString(password)
+    hasNumber := regexp.MustCompile(`[0-9]`).MatchString(password)
     hasSpecial := regexp.MustCompile(`[^a-zA-Z0-9\s]`).MatchString(password)
 
-    return length >= 8 && ((hasLower && hasUpper && hasNumber) || (hasLower && hasUpper && hasSpecial) || (hasLower && hasNumber && hasSpecial) || (hasUpper && hasNumber && hasSpecial))
+    return length >= 8 && hasLower && hasUpper && hasNumber && !hasSpecial
 }
