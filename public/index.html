@@ -21,38 +21,13 @@
         <p id="password"></p>
         <button id="copy-button">📋</button>
       </div>
-      <button onclick="window.location.href='strength-test.html'">
-        Test Password Strength
-      </button>
+      <form id="strength-test-form">
+        <label for="test-password">Password to Test:</label>
+        <input type="text" id="test-password" name="test-password" />
+        <button type="submit">Test Strength</button>
+      </form>
+      <p id="strength"></p>
     </div>
-    <script>
-      document
-        .getElementById("password-form")
-        .addEventListener("submit", function (e) {
-          e.preventDefault();
-          var length = document.getElementById("length").value;
-          fetch("/api/generate-password.go?length=" + length, {
-            method: "POST",
-          })
-            .then(function (response) {
-              return response.json();
-            })
-            .then(function (data) {
-              document.getElementById("password").innerText = data.password;
-              document.getElementById("password-container").style.display =
-                "block";
-            })
-            .catch(function (error) {
-              console.error("Error:", error);
-            });
-        });
-
-      document
-        .getElementById("copy-button")
-        .addEventListener("click", function () {
-          var password = document.getElementById("password").innerText;
-          navigator.clipboard.writeText(password);
-        });
-    </script>
+    <script src="requests.js"></script>
   </body>
 </html>
