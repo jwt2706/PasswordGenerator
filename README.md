@@ -18,6 +18,8 @@ This project uses just plain html/css/js for the frontend, and golang for the ba
 
 If you want to run the backend locally, you will need to have golang installed on your machine. You can then run the backend by executing `go run generate-password.go` and `go run strength-test.go` in the terminal respectively.
 
+For the frontend, it's just `npx vite`.
+
 ## License
 
 This project is licensed under the MIT License.
