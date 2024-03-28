@@ -38,7 +38,7 @@ document
       return;
     }
     document.getElementById("strength-loading").style.display = "block";
-    fetch("/api/strength-test.go", {
+    fetch("/api/strength-test.go?_=" + new Date().getTime(), {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
