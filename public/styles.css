@@ -1,77 +1,31 @@
 body {
-  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   margin: 0;
   padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #f4f4f4;
+  font-family: Arial, sans-serif;
 }
+
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-img {
-  width: 150px;
-  height: 150px;
-}
-.form {
-  background: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
-  width: 300px;
-}
-input {
-  margin: 10px 0;
-  padding: 10px;
-  width: 100%;
-  box-sizing: border-box;
-  border: none;
-  border-bottom: 2px solid #4caf50;
-  background: transparent;
-  outline: none;
-}
-button {
-  margin: 10px 0;
-  padding: 10px;
-  width: 100%;
-  background-color: #4caf50;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
-.response-box {
-  border: 1px solid #ccc;
-  padding: 10px;
-  margin-top: 10px;
-  background-color: #f9f9f9;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+
 .home-button {
   position: absolute;
   top: 10px;
   left: 10px;
-  padding: 10px;
-  background-color: #4caf50;
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
 }
-button:hover,
-.home-button:hover {
-  background-color: #45a049;
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-#copy-button {
-  margin-left: 10px;
-}
-@media (max-width: 600px) {
-  .form {
-    width: 98%;
-  }
+
+.response-box {
+  margin-top: 20px;
 }

@@ -8,11 +8,11 @@
   <body>
     <div class="container">
       <div style="text-align: center">
-        <img src="favicon.svg" alt="Favicon" />
+        <img src="favicon.svg" alt="Favicon" width="250" height="250" />
         <h1>Password Generator</h1>
       </div>
       <br />
-      <a href="https://jwt2706.github.io" class="home-button">Home</a>
+      <a href="https://jwt2706.github.io" class="home-button">Home</a></button>
       <form id="password-form" class="form">
         <label for="length">Length:</label>
         <input
@@ -28,16 +28,9 @@
         <div id="password-container" style="display: none">
           <div class="response-box">
             <p id="password"></p>
-            <button id="copy-button" type="button">&#128203;</button>
           </div>
+          <button id="copy-button" type="button">&#128203;</button>
         </div>
-      </form>
-      <form id="strength-test-form" class="form">
-        <label for="test-password">Password to Test:</label>
-        <input type="text" id="test-password" name="test-password" />
-        <button type="submit">Test Strength</button>
-        <div id="strength-loading" style="display: none">Loading...</div>
-        <p id="strength" class="response-box" style="display: none"></p>
       </form>
     </div>
     <script src="requests.js"></script>

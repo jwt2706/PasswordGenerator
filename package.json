@@ -17,6 +17,9 @@
   },
   "homepage": "https://github.com/jwt2706/PasswordGenerator",
   "dependencies": {
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.38",
+    "tailwindcss": "^3.4.3",
     "vite": "^5.2.6"
   }
 }
