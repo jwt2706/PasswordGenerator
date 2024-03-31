@@ -19,6 +19,7 @@ body {
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ddd;
 }
 
 .home-button {
@@ -39,9 +40,21 @@ body {
   width: 100%;
 }
 
-.form input,
+.form input {
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
 .form button {
   margin-top: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
 }
 
 .response-box {
