@@ -1,6 +1,6 @@
 # Password Generator
 
-Generate a random password with a specified length. See [here](https://jwt2706.ca/PasswordGenerator).
+Generate a random password with a specified length. Try [here](https://jwt2706.ca/PasswordGenerator).
 
 Developed with golang and javascript.
 
